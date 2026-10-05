@@ -72,6 +72,10 @@ format and replaces your file, keeping the original next to it as `<name>.bak`. 
 releases, and images already modified by something else, are refused rather than
 corrupted. Running it twice is harmless.
 
+A drag-and-drop GUI (`python3 tools/gui.py`, needs tkinter) does the same. CI builds
+standalone apps with `wit` bundled for macOS, Linux and Windows (`.github/workflows/build-gui.yml`),
+plus zips of the Gecko codes and Riivolution patches; tagged `v*` pushes attach them to the release.
+
 ### Gecko codes (Dolphin)
 
 Copy `codes/<disc id>.ini` (`RS9E8P`, `RS9P8P` or `RS9J8P`) into Dolphin's `GameSettings`
