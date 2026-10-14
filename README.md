@@ -18,6 +18,7 @@ Tested in Dolphin (scripted controller input) on all three releases:
 - the game's own input state for a Classic Controller matches the one for an emulated
   GameCube pad (buttons, both sticks, same full-scale stick value of 100)
 - a GameCube pad keeps working with the patch applied
+- ZL and ZR set the game's L and R input bits just as a GameCube pad's L and R do (Dolphin, USA release)
 - the disc patcher (`.iso` through `wit`) produces an image that boots and behaves the same
 
 **Not tested on a real Wii.** The patch only reuses what the game and the Wii SDK already do
