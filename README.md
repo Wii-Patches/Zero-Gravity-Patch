@@ -46,7 +46,7 @@ Controller**.
 | A / B / X / Y | A / B / X / Y |
 | + | Start |
 | L / R (click) | L / R |
-| ZL / ZR | Z |
+| ZL / ZR | L / R (and Z, which the game does not use) |
 | D-pad | D-pad |
 
 HOME is left to the game and the Wii's HOME Menu.

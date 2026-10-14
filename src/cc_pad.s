@@ -63,6 +63,10 @@
     or      5, 5, 6
     rlwinm  6, 4, 2, 27, 27             # ZR     -> Z
     or      5, 5, 6
+    rlwinm  6, 4, 31, 25, 25            # ZL     -> L (Z does nothing in the game)
+    or      5, 5, 6
+    rlwinm  6, 4, 3, 26, 26             # ZR     -> R
+    or      5, 5, 6
     rlwinm  6, 4, 3, 28, 28             # Up
     or      5, 5, 6
     rlwinm  6, 4, 31, 31, 31            # Left
