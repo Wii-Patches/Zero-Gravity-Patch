@@ -102,7 +102,7 @@ jobs:
             $BINS --distpath pyinst_dist tools/gui.py
           cp wit-gpl-2.0.txt "pyinst_dist/ZeroGravity-Patcher.app/Contents/Resources/wit-gpl-2.0.txt"
           cd pyinst_dist
-          zip -qr "../ZeroGravity-Patch-${{ matrix.target }}.zip" ZeroGravity-Patcher.app
+          zip -qr "../ZeroGravity-ISO-Patcher-${{ matrix.target }}.zip" ZeroGravity-Patcher.app
 
       - name: Build app (Linux)
         if: matrix.target == 'linux-x86_64'
@@ -115,7 +115,7 @@ jobs:
             $BINS --distpath pyinst_dist tools/gui.py
           cp wit-gpl-2.0.txt pyinst_dist/ZeroGravity-Patcher/
           cd pyinst_dist
-          tar -czf "../ZeroGravity-Patch-${{ matrix.target }}.tar.gz" ZeroGravity-Patcher
+          tar -czf "../ZeroGravity-ISO-Patcher-${{ matrix.target }}.tar.gz" ZeroGravity-Patcher
 
       - name: Build app (Windows)
         if: matrix.target == 'windows-x86_64'
@@ -129,19 +129,19 @@ jobs:
             $BINS --distpath pyinst_dist tools/gui.py
           cp wit-gpl-2.0.txt pyinst_dist/ZeroGravity-Patcher/
           cd pyinst_dist
-          7z a "../ZeroGravity-Patch-${{ matrix.target }}.zip" ZeroGravity-Patcher \
-            || powershell -Command "Compress-Archive -Path ZeroGravity-Patcher -DestinationPath ../ZeroGravity-Patch-${{ matrix.target }}.zip"
+          7z a "../ZeroGravity-ISO-Patcher-${{ matrix.target }}.zip" ZeroGravity-Patcher \
+            || powershell -Command "Compress-Archive -Path ZeroGravity-Patcher -DestinationPath ../ZeroGravity-ISO-Patcher-${{ matrix.target }}.zip"
 
       - uses: actions/upload-artifact@v4
         with:
-          name: ZeroGravity-Patch-${{ matrix.target }}
-          path: ZeroGravity-Patch-${{ matrix.target }}.*
+          name: ZeroGravity-ISO-Patcher-${{ matrix.target }}
+          path: ZeroGravity-ISO-Patcher-${{ matrix.target }}.*
 
       - name: Attach to release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: ZeroGravity-Patch-${{ matrix.target }}.*
+          files: ZeroGravity-ISO-Patcher-${{ matrix.target }}.*
 
   patch-files:
     needs: check
